@@ -17,9 +17,6 @@ X_train, X_test, y_train, y_test = train_test_split(X,y,test_size=0.20)oversampl
 X_over, y_over = oversample.fit_resample(X_train,y_train)rf = RandomForestClassifier()
 rf.fit(X_over,y_over)
 
-prediction = clf.predict(df)
-prediction_proba = clf.predict_proba(df)
-
 preds = rf.predict(X_test)
 print(accuracy_score(y_test,preds))
 
