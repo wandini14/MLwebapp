@@ -11,9 +11,7 @@ from sklearn.model_selection import train_test_split
 from imblearn.over_sampling import RandomOverSampler
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.pipeline import Pipeline
-from sklearn.metrics import accuracy_score 
-X = framingham.drop('TenYearCHD',axis=1)
-accuracy_score(X)
+from sklearn.metrics import accuracy_scoreX = framingham.drop('TenYearCHD',axis=1)
 y = framingham['TenYearCHD']
 X_train, X_test, y_train, y_test = train_test_split(X,y,test_size=0.20)oversample = RandomOverSampler(sampling_strategy='minority')
 X_over, y_over = oversample.fit_resample(X_train,y_train)rf = RandomForestClassifier()
